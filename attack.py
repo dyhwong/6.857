@@ -84,21 +84,20 @@ def main():
     g = 0
 
     # get bits 2-5
-    start_bits = 3
-    # max_i = 0
-    # max_t = 0
-    # for i in range(1, 2**start_bits):
-    #     t_1 = 0
-    #     for j in range(512):
-    #         t_1 += time_decrypt(gmpy2.mpz(i * 2**(511 - start_bits) + 2**511 + j))
-    #     print(i, t_1)
-    #     if t_1 > max_t:
-    #         max_t = t_1
-    #         max_i = i
+    start_bits = 2
+    max_i = 0
+    max_t = 0
+    for i in range(1, 2**start_bits):
+        t_1 = 0
+        for j in range(1024):
+            t_1 += time_decrypt(gmpy2.mpz(i * 2**(511 - start_bits) + 2**511 + j))
+        print(i, t_1)
+        if t_1 > max_t:
+            max_t = t_1
+            max_i = i
 
-    # print("MAX:", max_i, max_t)
+    print("MAX:", max_i, max_t)
 
-    max_i = 5
     g += max_i*2**(511 - start_bits) + 2**511
     # Q -= g
 
