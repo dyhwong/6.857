@@ -5,7 +5,7 @@ from hashlib import sha256
 import binascii
 
 SERVER_URL = "http://6857rsa.csail.mit.edu:8080"
-TEAM = "dyhwong,tzhan,virdi"
+TEAM = "dyhwong,stewarta,tzhan,virdi"
 
 def main():
     part_a()
